@@ -1,0 +1,187 @@
+/**
+ * Axiom QuantFinance - Modern Prestige FinTech Theme System
+ * Pristine Porcelain Light & Minimalist Titanium Dark (Stripe & Mercury Luxury Aesthetic)
+ * @author أ. طارق ابوعشي
+ */
+
+/* 1. Pristine Porcelain Light (Default Elite Theme) */
+:root,
+:root[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-input: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 232, 240, 0.8);
+
+  --border-subtle: #E2E8F0;
+  --border-hover: #CBD5E1;
+  --border-active: #94A3B8;
+  --border-focus: #2563EB;
+
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+
+  /* Pure Institutional Accent Signals */
+  --accent-primary: #2563EB; /* Royal Sapphire Blue */
+  --accent-primary-hover: #1D4ED8;
+  --accent-primary-subtle: rgba(37, 99, 235, 0.06);
+
+  --accent-green: #059669; /* Pure Emerald */
+  --accent-green-subtle: rgba(5, 150, 105, 0.08);
+
+  --accent-red: #DC2626; /* Crisp Crimson */
+  --accent-red-subtle: rgba(220, 38, 38, 0.08);
+
+  --accent-gold: #D97706; /* Refined Amber */
+  --accent-gold-subtle: rgba(217, 119, 6, 0.08);
+
+  --accent-purple: #7C3AED;
+
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 8px 24px -4px rgba(0, 0, 0, 0.07), 0 2px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-dropdown: 0 12px 32px -4px rgba(0, 0, 0, 0.08);
+
+  --chart-grid: rgba(226, 232, 240, 0.6);
+  --chart-label: #64748B;
+  --chart-crosshair: #94A3B8;
+}
+
+/* 2. Titanium Minimalist Dark (High-Contrast Elite Dark) */
+:root[data-theme="dark"] {
+  --bg-primary: #07090E;
+  --bg-secondary: #0E131F;
+  --bg-card: rgba(15, 21, 34, 0.75);
+  --bg-card-hover: rgba(24, 33, 52, 0.85);
+  --bg-input: #0B0F19;
+  --bg-subtle: #172033;
+
+  --glass-bg: rgba(10, 14, 24, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.07);
+
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-active: rgba(255, 255, 255, 0.25);
+  --border-focus: #3B82F6;
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+
+  /* Refined Signals on Pure Black */
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #60A5FA;
+  --accent-primary-subtle: rgba(59, 130, 246, 0.12);
+
+  --accent-green: #10B981;
+  --accent-green-subtle: rgba(16, 185, 129, 0.12);
+
+  --accent-red: #EF4444;
+  --accent-red-subtle: rgba(239, 68, 68, 0.12);
+
+  --accent-gold: #F59E0B;
+  --accent-gold-subtle: rgba(245, 158, 11, 0.12);
+
+  --accent-purple: #A855F7;
+
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.7);
+  --shadow-dropdown: 0 16px 40px -6px rgba(0, 0, 0, 0.8);
+
+  --chart-grid: rgba(255, 255, 255, 0.05);
+  --chart-label: #94A3B8;
+  --chart-crosshair: #64748B;
+}
+
+/* Common Typography & Layout Rules */
+:root {
+  --font-arabic: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-arabic);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="dark"] body {
+  background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30, 58, 138, 0.18), transparent);
+  background-attachment: fixed;
+}
+
+:root[data-theme="light"] body {
+  background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(226, 232, 240, 0.5), transparent);
+  background-attachment: fixed;
+}
+
+/* BiDi Isolation Rules */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Tabular Numbers & Strict LTR for Math and Tickers */
+.num-ltr,
+.symbol-ticker,
+.code-math,
+.mono-val,
+.greeks-val,
+.kpi-value,
+canvas {
+  direction: ltr !important;
+  text-align: left !important;
+  font-family: var(--font-mono) !important;
+  font-variant-numeric: tabular-nums !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Status Indicator Dot */
+.pulse-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  display: inline-block;
+  box-shadow: 0 0 0 2px var(--accent-green-subtle);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
